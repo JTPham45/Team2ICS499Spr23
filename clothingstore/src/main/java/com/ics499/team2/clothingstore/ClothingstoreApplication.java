@@ -8,7 +8,12 @@ public class ClothingstoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClothingstoreApplication.class, args);
-		// making an initial commit
+		// making an initial commit - Tom
+		// Hello hello
+	}
+	
+	public class doSomething() {
+		return 1;
 	}
 
 }
