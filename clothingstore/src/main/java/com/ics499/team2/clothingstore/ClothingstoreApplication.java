@@ -8,7 +8,7 @@ public class ClothingstoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClothingstoreApplication.class, args);
-		// Mic check is this on??? - Tom
+		// making an initial commit
 	}
 
 }
