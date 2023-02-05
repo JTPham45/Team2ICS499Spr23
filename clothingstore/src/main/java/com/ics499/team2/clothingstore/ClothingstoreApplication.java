@@ -12,8 +12,8 @@ public class ClothingstoreApplication {
 		// Hello hello
 	}
 	
-	public class doSomething() {
-		return 1;
+	public void doSomething() {
+		// Just testing things, we can delete this - Tom
 	}
 
 }
