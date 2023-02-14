@@ -1,6 +1,25 @@
 package com.ics499.team2.clothingstore.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "reviews")
 public class ProductReview {
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@JoinTable(name = "reviews", joinColumns = @JoinColumn(name = "reviewId"), inverseJoinColumns = @JoinColumn(name = "productId"))
+	@Id
+	@GeneratedValue
+	private long reviewId;
+
 	private Product product;
 	private int rating;
 	private long userAccountID;

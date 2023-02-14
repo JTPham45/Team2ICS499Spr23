@@ -2,7 +2,24 @@ package com.ics499.team2.clothingstore.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Transaction")
 public class Transaction implements Payment {
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@JoinTable(name = "userTransactions", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "transactionId"))
+	@Id
+	@GeneratedValue
+	private long transactionId;
 	private String PaymentMethod;// could this be a enum? like Visa, Mastercard, discover?
 	private int creditCardNumber;
 	private int creditCardCV;

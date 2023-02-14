@@ -1,6 +1,28 @@
 package com.ics499.team2.clothingstore.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "products")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Product {
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@JoinTable(name = "products", joinColumns = @JoinColumn(name = "shoppingCartId"), inverseJoinColumns = @JoinColumn(name = "productId"))
+	@Id
+	@GeneratedValue
+	private long productId;
+
 	private float price;
 	private int stock;
 	private String Description;
@@ -8,7 +30,6 @@ public abstract class Product {
 	private String color;
 	private String size;
 	private String fit;
-	private static long productId = 0;
 
 	public Product(float price, int stock, String description, String brand, String color, String size, String fit) {
 		super();
@@ -19,11 +40,6 @@ public abstract class Product {
 		this.color = color;
 		this.size = size;
 		this.fit = fit;
-		productId = createProductId();
-	}
-
-	public static synchronized long createProductId() {
-		return productId++;
 	}
 
 	public float getPrice() {
