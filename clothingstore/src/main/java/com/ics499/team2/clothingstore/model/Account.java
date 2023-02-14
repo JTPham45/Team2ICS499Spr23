@@ -3,6 +3,9 @@ package com.ics499.team2.clothingstore.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Account extends Customer {
 	private String address;
 	private String city;
