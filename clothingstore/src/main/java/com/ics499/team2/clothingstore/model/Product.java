@@ -1,0 +1,91 @@
+package com.ics499.team2.clothingstore.model;
+
+public abstract class Product {
+	private float price;
+	private int stock;
+	private String Description;
+	private String brand;
+	private String color;
+	private String size;
+	private String fit;
+	private static long productId = 0;
+
+	public Product(float price, int stock, String description, String brand, String color, String size, String fit) {
+		super();
+		this.price = price;
+		this.stock = stock;
+		Description = description;
+		this.brand = brand;
+		this.color = color;
+		this.size = size;
+		this.fit = fit;
+		productId = createProductId();
+	}
+
+	public static synchronized long createProductId() {
+		return productId++;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public String getDescription() {
+		return Description;
+	}
+
+	public void setDescription(String description) {
+		Description = description;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public String getFit() {
+		return fit;
+	}
+
+	public void setFit(String fit) {
+		this.fit = fit;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [price=" + price + ", stock=" + stock + ", Description=" + Description + ", brand=" + brand
+				+ ", color=" + color + ", size=" + size + ", fit=" + fit + "]";
+	}
+
+}
