@@ -15,6 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Transaction")
 public class Transaction implements Payment {
+
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinTable(name = "userTransactions", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "transactionId"))
 	@Id
@@ -42,6 +43,10 @@ public class Transaction implements Payment {
 		this.transactionDate = transactionDate;
 		this.isReturn = isReturn;
 		this.userAccountId = userAccountId;
+	}
+
+	public Transaction() {
+
 	}
 
 	/**

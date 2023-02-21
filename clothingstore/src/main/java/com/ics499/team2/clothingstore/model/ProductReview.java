@@ -33,6 +33,10 @@ public class ProductReview {
 		this.review = review;
 	}
 
+	public ProductReview() {
+
+	}
+
 	public Product getProduct() {
 		return product;
 	}

@@ -32,6 +32,10 @@ public class ShoppingCart {
 		cartId = createCartId();
 	}
 
+	public ShoppingCart() {
+
+	}
+
 	public void addProduct(Product p) {
 		products.add(p);
 	}

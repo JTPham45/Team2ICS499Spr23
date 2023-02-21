@@ -9,11 +9,11 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Promotion {
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+
 	@Id
 	@GeneratedValue
 	private long promotionId;
-
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 
 	private String promotionName;
 	private double percentageOff;
@@ -23,6 +23,10 @@ public class Promotion {
 		this.promotionId = promotionId;
 		this.promotionName = promotionName;
 		this.percentageOff = percentageOff;
+	}
+
+	public Promotion() {
+
 	}
 
 	public long getPromotionId() {

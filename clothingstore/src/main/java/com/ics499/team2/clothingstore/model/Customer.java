@@ -7,17 +7,14 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Customer extends User {
 
-	@Id
+public class Customer extends User {
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@GeneratedValue
 	private long customerId;
-
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 
 	private String address;
 	private String city;
@@ -36,6 +33,10 @@ public class Customer extends User {
 		this.phoneNumber = phoneNumber;
 		this.dateAccountCreated = dateAccountCreated;
 		this.transactionHistory = transactionHistory;
+
+	}
+
+	public Customer() {
 
 	}
 

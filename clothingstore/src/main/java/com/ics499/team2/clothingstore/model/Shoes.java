@@ -10,4 +10,7 @@ public class Shoes extends Product {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Shoes() {
+
+	}
 }

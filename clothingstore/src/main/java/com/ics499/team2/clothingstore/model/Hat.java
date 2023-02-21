@@ -10,4 +10,8 @@ public class Hat extends Product {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Hat() {
+
+	}
+
 }
