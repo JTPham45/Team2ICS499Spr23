@@ -43,7 +43,9 @@ public class Transaction implements Payment {
 		this.isReturn = isReturn;
 		this.userAccountId = userAccountId;
 	}
-
+	public Transaction() {
+		
+	}
 	/**
 	 * does this generate and return a PDF as a receipt?
 	 */

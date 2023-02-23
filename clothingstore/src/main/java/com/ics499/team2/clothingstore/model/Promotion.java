@@ -6,6 +6,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Promotion {
@@ -13,7 +14,7 @@ public class Promotion {
 	@GeneratedValue
 	private long promotionId;
 
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+//@OneToMany(mappedBy="promotion")
 
 	private String promotionName;
 	private double percentageOff;
@@ -23,6 +24,9 @@ public class Promotion {
 		this.promotionId = promotionId;
 		this.promotionName = promotionName;
 		this.percentageOff = percentageOff;
+	}
+	public Promotion() {
+		
 	}
 
 	public long getPromotionId() {

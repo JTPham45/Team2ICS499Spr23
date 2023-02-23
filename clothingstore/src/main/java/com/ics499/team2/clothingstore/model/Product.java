@@ -41,6 +41,7 @@ public abstract class Product {
 		this.size = size;
 		this.fit = fit;
 	}
+	public Product() {}
 
 	public float getPrice() {
 		return price;

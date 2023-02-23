@@ -1,15 +1,26 @@
 package com.ics499.team2.clothingstore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Rewards {
 	private int currentPoints;
 	private int redeemedPoints;
 	private int accountLifespanPoints;
+	@Id
+	@GeneratedValue
+	private long rewardId;
 
 	public Rewards(int currentPoints, int redeemedPoints, int accountLifespanPoints) {
 		super();
 		this.currentPoints = currentPoints;
 		this.redeemedPoints = redeemedPoints;
 		this.accountLifespanPoints = accountLifespanPoints;
+	}
+	public Rewards() {
+		
 	}
 
 	public Product whatToRedeem() {

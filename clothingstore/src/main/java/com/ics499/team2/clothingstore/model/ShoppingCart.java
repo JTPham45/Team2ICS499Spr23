@@ -31,6 +31,9 @@ public class ShoppingCart {
 		this.userAccountId = userAccountId;
 		cartId = createCartId();
 	}
+	ShoppingCart(){
+		
+	}
 
 	public void addProduct(Product p) {
 		products.add(p);

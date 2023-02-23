@@ -9,5 +9,8 @@ public class Shirt extends Product {
 		super(price, stock, description, brand, color, size, fit);
 		// TODO Auto-generated constructor stub
 	}
+	public Shirt() {
+		
+	}
 
 }

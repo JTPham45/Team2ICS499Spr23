@@ -1,13 +1,24 @@
 package com.ics499.team2.clothingstore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Shipping {
 	private String shipToAddress;
 	private double shippingCosts = 9.99;
+	@Id
+	@GeneratedValue
+	private long shippingId;
 
 	public Shipping(String shipToAddress, double shippingCosts) {
 		super();
 		this.shipToAddress = shipToAddress;
 		this.shippingCosts = shippingCosts;
+	}
+	public Shipping() {
+		
 	}
 
 	public double addShipping() {

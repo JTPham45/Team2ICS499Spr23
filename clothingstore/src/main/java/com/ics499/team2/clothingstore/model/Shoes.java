@@ -9,5 +9,7 @@ public class Shoes extends Product {
 		super(price, stock, description, brand, color, size, fit);
 		// TODO Auto-generated constructor stub
 	}
-
+	public Shoes() {
+		
+	}
 }

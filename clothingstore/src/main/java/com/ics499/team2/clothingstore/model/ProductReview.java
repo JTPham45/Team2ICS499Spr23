@@ -32,6 +32,9 @@ public class ProductReview {
 		this.userAccountID = userAccountID;
 		this.review = review;
 	}
+	public ProductReview() {
+		
+	}
 
 	public Product getProduct() {
 		return product;

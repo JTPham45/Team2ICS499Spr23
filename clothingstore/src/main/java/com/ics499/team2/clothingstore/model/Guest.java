@@ -10,23 +10,21 @@ import javax.persistence.OneToOne;
 @Entity
 public class Guest extends User {
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	//@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 
-	@Id
-	@GeneratedValue
-	public long sessionId = 0;
+
 
 	public Guest() {
-		createId();
+		//createId();
 	}
 
-	public long createId() {
-		return sessionId++;
-	}
-
-	@Override
-	public String toString() {
-		return "Guest: " + sessionId;
-	}
-
+//	public long createId() {
+//		return sessionId++;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Guest: " + sessionId;
+//	}
+//
 }

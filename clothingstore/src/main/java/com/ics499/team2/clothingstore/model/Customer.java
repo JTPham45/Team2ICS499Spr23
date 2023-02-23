@@ -13,11 +13,11 @@ import javax.persistence.OneToOne;
 @Entity
 public class Customer extends User {
 
-	@Id
+
 	@GeneratedValue
 	private long customerId;
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	//@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 
 	private String address;
 	private String city;
@@ -38,6 +38,7 @@ public class Customer extends User {
 		this.transactionHistory = transactionHistory;
 
 	}
+	public Customer() {}
 
 	public void addTransactionToHistory(Transaction t) {
 		this.transactionHistory.add(t);
